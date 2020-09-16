@@ -1,28 +1,58 @@
-/*$primaryBtn: rgb(175, 65, 120);
-$textColor: black;
-@mixin flexCenter($direction, $background) {
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
-    background: $background;
+/* COLORS */
+/* MIXINS */
+body,
+html {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
+/* HEADER */
 header {
-    @include flexCenter(column, );
-    color: $textColor;
-    background: lightblue;
-    width: 100% - 90%;
-    button {
-        background: $primaryBtn;
-        &::after {
-            content: "end";
-        }
-    }
-} */
-body {
-  font-family: "Arial", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  background-color: #F8F0ED;
+  width: 100vw;
+  height: 80px;
+  top: 0;
+}
+
+header nav {
+  display: inline;
+  vertical-align: middle;
+}
+
+header nav a {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 15px;
   color: #1e1e1e;
+}
+
+header nav a:hover {
+  color: #aaa;
+}
+
+header #logo {
+  font-size: 25px;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=styles.css.map */
