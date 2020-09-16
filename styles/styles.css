@@ -1,0 +1,28 @@
+/*$primaryBtn: rgb(175, 65, 120);
+$textColor: black;
+@mixin flexCenter($direction, $background) {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+header {
+    @include flexCenter(column, );
+    color: $textColor;
+    background: lightblue;
+    width: 100% - 90%;
+    button {
+        background: $primaryBtn;
+        &::after {
+            content: "end";
+        }
+    }
+} */
+body {
+  font-family: "Arial", sans-serif;
+  color: #1e1e1e;
+}
+/*# sourceMappingURL=styles.css.map */
