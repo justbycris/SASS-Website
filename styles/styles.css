@@ -261,16 +261,29 @@ button:hover {
 .main-container .right img {
   width: 51.59%;
   text-align: center;
-  border-right: 15px solid #fff;
-  border-left: 15px solid #fff;
 }
 
-.main-container h2 {
+h2 {
   font-family: 'Arial', sans-serif;
   font-size: calc(18px + 1.5vw);
   text-transform: uppercase;
   text-align: center;
   color: #fff;
   color: #1e1e1e;
+}
+
+.bottom {
+  width: 100vw;
+}
+
+.bottom .bottom-in {
+  font-family: 'Arial', sans-serif;
+  font-size: calc(12px + .5vw);
+  color: #1e1e1e;
+  line-height: normal;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 50vw;
+  margin: 3rem auto;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -198,12 +198,20 @@ button {
         img {
             width: 51.59%;
             text-align: center;
-            border-right: 15px solid $colorWhite;
-            border-left: 15px solid $colorWhite;
         }
     }
-    h2 {
-        @include headings();
-        color: $colorText;
+}
+
+h2 {
+    @include headings();
+    color: $colorText;
+}
+
+.bottom {
+    width: 100vw;
+    .bottom-in {
+        @include text();
+        width: 50vw;
+        margin: 3rem auto;
     }
 }
