@@ -64,6 +64,7 @@ h1 {
   font-family: 'Arial', sans-serif;
   font-size: calc(18px + 1.5vw);
   text-transform: uppercase;
+  text-align: center;
   color: #fff;
 }
 
@@ -169,13 +170,14 @@ button:hover {
 }
 
 .middle img {
-  width: 70%;
+  width: 50%;
 }
 
 .middle h3 {
   font-family: 'Arial', sans-serif;
   font-size: calc(18px + 1.5vw);
   text-transform: uppercase;
+  text-align: center;
   color: #fff;
   color: #1e1e1e;
 }
@@ -198,5 +200,77 @@ button:hover {
   position: absolute;
   height: 500px;
   width: 100vw;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100vw;
+  position: relative;
+  width: 100vw;
+  z-index: 10;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+}
+
+.main-container .left {
+  display: inline-block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: calc(12px + .5vw);
+  color: #1e1e1e;
+  line-height: normal;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 80px;
+  text-align: center;
+}
+
+.main-container .right {
+  display: inline-block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main-container .right img {
+  width: 51.59%;
+  text-align: center;
+  border-right: 15px solid #fff;
+  border-left: 15px solid #fff;
+}
+
+.main-container h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: calc(18px + 1.5vw);
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  color: #1e1e1e;
 }
 /*# sourceMappingURL=styles.css.map */
