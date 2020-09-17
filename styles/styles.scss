@@ -1,9 +1,11 @@
 /* COLORS */
 
-$color1: #F8F0ED;
-$colorText: #1e1e1e;
+$color1: #2D3047;
+$color2: #b9cee9;
 $colorWhite: #fff;
-$colorGray: #aaa;
+$colorText: #1e1e1e;
+$colorGray: #7A8899;
+$colorAccent: #ED6A5A;
 
 /* MIXINS */
 
@@ -16,12 +18,41 @@ $colorGray: #aaa;
         transform: uppercase;
         decoration: none;
     }
+    color: $colorWhite;
 }
 
-@mixin ptext {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
+@mixin headings {
+    font: {
+        family: 'Arial', sans-serif;
+        size: calc(18px + 1.5vw);
+    }
+    text: {
+        transform: uppercase;
+    }
+    color: $colorWhite;
+}
+
+@mixin text {
+    font: {
+        family: 'Arial', sans-serif;
+        size: calc(12px + .5vw);
+    }
     color: $colorText;
+    line-height: normal;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@mixin buttons {
+    background-color: #FFBC42;
+    color: $color1;
+    padding: 15px 20px;
+    border: none;
+    font-weight: bold;
+    margin-top: 40px;
+    &:hover {
+        background-color: #d45f4f;
+    }
 }
 
 @mixin flexparent {
@@ -30,10 +61,11 @@ $colorGray: #aaa;
     vertical-align: middle;
     align-items: center;
     flex-flow: row wrap;
+    width: 100vw;
 }
 
 @mixin flexchild {
-    display: inline;
+    display: inline-block;
     justify-content: center;
     vertical-align: middle;
     align-items: center;
@@ -44,6 +76,9 @@ html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
 
@@ -52,7 +87,6 @@ html {
 header {
     @include flexparent();
     background-color: $color1;
-    width: 100vw;
     height: 80px;
     top: 0;
     nav {
@@ -61,15 +95,86 @@ header {
         a {
             @include nav();
             padding: 0 15px;
-            color: $colorText;
             &:hover {
                 color: $colorGray;
             }
         }
     }
     #logo {
-        font-size: 25px;
+        font-size: calc(25px + 1vw);
         font-weight: bold;
         align-self: center;
     }
 }
+
+
+/*HEADINGS */
+
+h1 {
+    @include headings();
+}
+
+.top {
+    @include flexparent();
+    flex-flow: row nowrap;
+    background-color: $colorGray;
+    .box {
+        text-align: center;
+        width: 50vw;
+        height: auto;
+        img {
+            width: 100%;
+            float: left;
+        }
+        .ptop {
+            width: 40vw;
+            margin: 0 auto;
+            @include text();
+            color: $colorWhite;
+        }
+    }
+}
+
+button {
+    @include buttons();
+}
+
+.middle {
+    @include flexparent();
+    flex-wrap: nowrap;
+    width: 100%;
+    .box2 {
+        @include flexchild();
+        display: block;
+        flex-flow: column nowrap;
+        width: 25%;
+        text-align: center;
+        padding: 3rem 4rem;
+    }
+    .box2 img h3 p {
+        margin: 0 auto;
+    }
+    img {
+        width: 70%;
+    }
+    h3 {
+        @include headings();
+        color: $colorText;
+    }
+    .box2 p {
+        @include text();
+    }
+}
+
+.middle2 {
+    position: relative;
+}
+
+.background-rec {
+    background-color: $color2;
+    position: absolute;
+    height: 500px;
+    width: 100vw;
+}
+
+.main-container
