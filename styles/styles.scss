@@ -83,6 +83,9 @@ html {
 }
 
 
+/*Responsive NAv */
+
+
 /* HEADER */
 
 header {
@@ -90,9 +93,19 @@ header {
     background-color: $color1;
     height: 80px;
     top: 0;
+    label {
+        margin: 0 0 0 0;
+        font-size: 25px;
+        line-height: 50px;
+        display: none;
+        margin: 0 20px;
+        text-align: right;
+        #toggle {
+            display: none;
+        }
+    }
     nav {
-        display: inline;
-        vertical-align: middle;
+        display: block;
         a {
             @include nav();
             padding: 0 15px;
@@ -119,12 +132,14 @@ h1 {
     @include flexparent();
     flex-flow: row nowrap;
     background-color: $colorGray;
+    box-sizing: border-box;
+    width: 100vw;
     .box {
         text-align: center;
         width: 50vw;
         height: auto;
         img {
-            width: 100%;
+            width: 50vw;
             float: left;
         }
         .ptop {
@@ -143,14 +158,15 @@ button {
 .middle {
     @include flexparent();
     flex-wrap: nowrap;
-    width: 100%;
+    box-sizing: border-box;
+    width: 100vw;
     .box2 {
         @include flexchild();
         display: block;
         flex-flow: column nowrap;
-        width: 25%;
+        width: 25vw;
         text-align: center;
-        padding: 3rem 4rem;
+        padding: 5rem 4rem;
     }
     .box2 img h3 p {
         margin: 0 auto;
@@ -169,11 +185,6 @@ button {
 
 .middle2 {
     position: relative;
-}
-
-.background-rec {
-    background-color: $color2;
-    position: absolute;
     height: 500px;
     width: 100vw;
 }
@@ -181,6 +192,8 @@ button {
 .main-container {
     @include flexparent();
     position: relative;
+    background-color: $color2;
+    padding: 2rem 0;
     width: 100vw;
     z-index: 10;
     flex-flow: row nowrap;
@@ -196,8 +209,7 @@ button {
         @include flexchild();
         width: 100%;
         img {
-            width: 51.59%;
-            text-align: center;
+            width: 50%;
         }
     }
 }
@@ -209,9 +221,33 @@ h2 {
 
 .bottom {
     width: 100vw;
+    box-sizing: border-box;
+    padding: 5rem 4rem;
     .bottom-in {
         @include text();
-        width: 50vw;
         margin: 3rem auto;
+        width: 80vw;
+    }
+}
+
+footer {
+    background-color: $color1;
+    width: 100vw;
+    height: 100px;
+    @include flexparent();
+    .footer2 {
+        @include flexchild();
+    }
+    h3 {
+        @include headings();
+        font-size: 20px;
+        color: $colorGray;
+    }
+    p {
+        @include text();
+        color: $colorGray;
+        font-size: 12px;
+        padding: 1rem 2rem;
+        text-align: center;
     }
 }

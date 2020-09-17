@@ -11,15 +11,19 @@
 
 <body>
     <header>
-        <nav>
-            <a href="#">About</a>
-            <a href="#">Templates</a>
-            <a href="#">Blogs</a>
-            <a href="#" id="logo">BRAND NAME</a>
-            <a href="#">Shop</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
+        <div class="nav1">
+            <label for="toggle">&#9776;</label>
+            <input type="checkbox" id="toggle">
+            <nav id="showmenu" onclick="clickAnyAreaOnMenu()">
+                <a href="#">About</a>
+                <a href="#">Templates</a>
+                <a href="#">Blogs</a>
+                <a href="#" id="logo">BRAND NAME</a>
+                <a href="#">Shop</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
     </header>
     <section class="top">
         <div class="box">
@@ -36,22 +40,22 @@
         <div class="box2">
             <img src="images/gallery1.png">
             <h3>Subtitle Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis rem natus, reiciendis sed quas facilis aspernatur laudantium! Quam, consequuntur.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
         </div>
         <div class="box2">
             <img src="images/gallery2.png">
             <h3>Subtitle Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis rem natus, reiciendis sed quas facilis aspernatur laudantium! Quam, consequuntur.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="box2">
             <img src="images/gallery3.png">
             <h3>Subtitle Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis rem natus, reiciendis sed quas facilis aspernatur laudantium! Quam, consequuntur.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
     </section>
 
     <section class="middle2">
-        <div class="background-rec"></div>
+
         <div class="background-image"></div>
         <div class="main-container">
             <div class="left">
@@ -64,10 +68,10 @@
                 <img src="images/image-bottom.jpg" alt="Man jumping into basket hoop.">
             </div>
         </div>
+
     </section>
     <section class="bottom">
         <div class="bottom-in">
-
             <h2>Add a favorite saying</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident ab iste consequuntur cupiditate doloribus debitis. Suscipit doloribus repellat reprehenderit itaque autem? Quae tenetur debitis perferendis sint eveniet sequi magni ipsa praesentium,
                 nostrum saepe sunt, odit omnis maxime rerum. Suscipit, blanditiis eveniet atque laborum natus sint, dolore harum dignissimos velit accusamus aliquid facilis nostrum veritatis saepe voluptatum illum sequi fuga repudiandae ipsam ipsa itaque.
@@ -75,10 +79,13 @@
         </div>
     </section>
     <footer>
-        <h3>Are you ready to start?</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad perferendis hic, laudantium mollitia distinctio rem harum laboriosam vitae necessitatibus non?</p>
-        <button>Start</button>
+        <div class="footer2">
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad perferendis hic, laudantium mollitia distinctio rem harum laboriosam vitae necessitatibus non?</p>
+
+        </div>
     </footer>
+    <script src="app.js"></script>
 </body>
 
 </html>
