@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASS-Website</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/d09c1b067e.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <header>
-        <div class="nav1">
-            <label for="toggle">&#9776;</label>
-            <input type="checkbox" id="toggle">
-            <div class="menu" id="showmenu" onclick="clickAnyAreaOnMenu()">
-                <a href="#">About</a>
-                <a href="#">Templates</a>
-                <a href="#">Blogs</a>
-                <a href="#" id="logo">BRAND NAME</a>
-                <a href="#">Shop</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
+        <div class="container">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-ul" id="nav-ul">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Work with us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <section class="top">
@@ -32,7 +33,7 @@
         <div class="box" id="textbox">
             <h1>Heading 1</h1>
             <p class="ptop">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis beatae consectetur distinctio odio nobis repellendus facilis tenetur error, voluptas nihil cum, libero consequatur aliquam dolore possimus reiciendis. Dolorum corrupti harum
-                cum facere! Harum temporibus, vel earum facere cum magni deserunt provident corporis molestiae odio, voluptatum pariatur? Distinctio dignissimos debitis nihil.</p>
+                cum facere! Harum temporibus. </p>
             <button id="btn1">Join now</button>
         </div>
     </section>
@@ -55,8 +56,6 @@
     </section>
 
     <section class="middle2">
-
-        <div class="background-image"></div>
         <div class="main-container">
             <div class="left">
                 <h2>Lets Work Together!</h2>

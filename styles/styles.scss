@@ -49,7 +49,7 @@
         padding: 15px 20px;
         border: none;
         font-weight: bold;
-        margin-top: 40px;
+        margin: 20px 0;
         &:hover {
             background-color: #d45f4f;
         }
@@ -58,23 +58,24 @@
     @mixin flexparent {
         display: flex;
         justify-content: center;
-        vertical-align: middle;
         align-items: center;
-        flex-flow: row wrap;
+        flex-wrap: wrap;
         width: 100vw;
     }
     
     @mixin flexchild {
-        display: inline-block;
+        display: flex;
         justify-content: center;
         vertical-align: middle;
         align-items: center;
+        width: 100vw;
     }
     
     body,
     html {
         padding: 0;
         margin: 0;
+        height: 100vh;
         box-sizing: border-box;
         font-family: 'Arial', sans-serif;
         font-size: 16px;
@@ -84,31 +85,42 @@
     /* HEADER */
     
     header {
-        display: flex;
-        width: 100vw;
         background-color: $color1;
+        width: 100vw;
         height: 80px;
-        .nav1 {
-            @include flexchild();
-            margin: 0 auto;
-            .menu {
-                display: block;
+        position: fixed;
+        z-index: 15;
+        .hamburger {
+            display: none;
+            margin: 0;
+            float: right;
+            background-color: transparent;
+            color: $colorWhite;
+            outline: none;
+            border: none;
+            font-size: 35px;
+            cursor: pointer;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        nav {
+            @include flexparent();
+            margin: 0;
+            padding-top: 15px;
+            li {
+                @include nav();
+                @include flexchild();
+                display: inline;
+                padding: 0 15px;
+                text-decoration: none;
                 a {
+                    display: inline-block;
                     @include nav();
-                    text-align: center;
-                    padding: 1rem 1rem;
+                    &:hover {
+                        color: $colorGray;
+                    }
                 }
-            }
-            label {
-                margin: 0 0 0 0;
-                font-size: 25px;
-                line-height: 50px;
-                display: none;
-                margin: 0 20px;
-                text-align: right;
-            }
-            #toggle {
-                display: none;
             }
         }
     }
@@ -120,21 +132,21 @@
     
     .top {
         @include flexparent();
+        position: relative;
         flex-flow: row nowrap;
         background-color: $colorGray;
         box-sizing: border-box;
-        width: 100vw;
+        margin-top: 80px;
         .box {
             text-align: center;
             width: 50vw;
-            height: auto;
             img {
                 width: 50vw;
                 float: left;
             }
             .ptop {
                 width: 40vw;
-                margin: 0 auto;
+                margin: 15px auto;
                 @include text();
                 color: $colorWhite;
             }
@@ -147,8 +159,10 @@
     
     .middle {
         @include flexparent();
-        flex-wrap: nowrap;
         box-sizing: border-box;
+        position: relative;
+        //*top: 100px;
+        margin-top: 50px;
         width: 100vw;
         .box2 {
             @include flexchild();
@@ -156,7 +170,9 @@
             flex-flow: column nowrap;
             width: 25vw;
             text-align: center;
-            padding: 5rem 4rem;
+            padding: 25px 25px;
+            margin: 0 25px;
+            overflow-y: hidden;
         }
         .box2 img h3 p {
             margin: 0 auto;
@@ -175,31 +191,30 @@
     
     .middle2 {
         position: relative;
-        height: 500px;
         width: 100vw;
-    }
-    
-    .main-container {
-        @include flexparent();
-        position: relative;
-        background-color: $color2;
-        padding: 2rem 0;
-        width: 100vw;
-        z-index: 10;
-        flex-flow: row nowrap;
-        .left {
-            @include flexchild();
-            @include text();
+        margin-top: 50px;
+        .main-container {
+            @include flexparent();
+            background-color: $color2;
+            padding: 2rem 0;
             width: 100vw;
-            margin: 0 auto;
-            padding: 0 80px;
-            text-align: center;
-        }
-        .right {
-            @include flexchild();
-            width: 100%;
-            img {
-                width: 50%;
+            z-index: 10;
+            flex-flow: row nowrap;
+            .left {
+                @include flexchild();
+                @include text();
+                flex-direction: column;
+                width: 100vw;
+                margin: 0 auto;
+                padding: 0 80px;
+                text-align: center;
+            }
+            .right {
+                @include flexchild();
+                width: 100%;
+                img {
+                    width: 50%;
+                }
             }
         }
     }
@@ -210,20 +225,23 @@
     }
     
     .bottom {
+        display: block;
         width: 100vw;
         box-sizing: border-box;
-        padding: 5rem 4rem;
+        margin-top: 100px;
         .bottom-in {
             @include text();
-            margin: 3rem auto;
             width: 80vw;
+            margin: 0 auto;
         }
     }
     
     footer {
+        position: relative;
+        margin-top: 100px;
+        bottom: 0;
         background-color: $color1;
         width: 100vw;
-        height: 100px;
         @include flexparent();
         .footer2 {
             @include flexchild();
@@ -243,30 +261,50 @@
     }
     /*----------------MEDIA QUERIES--------------*/
     
-    $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default;
-    @media screen and (min-width: 340px) and (max-width:768) {
-        .nav1 {
-            margin-right: 0;
-            label {
+    @media screen and (max-width:768px) {
+        header {
+            .hamburger {
                 display: block;
-                cursor: pointer;
+                margin-right: 25px;
             }
-            .menu {
-                text-align: center;
-                width: 100%;
+            .nav-ul {
                 display: none;
-                box-sizing: border-box;
-                background-color: #000000;
-                a {
-                    display: block;
-                    border-bottom: 1px solid #D736A6;
-                    margin: 0;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                padding: 0;
+                li {
+                    width: 100%;
+                    padding: 20px 0;
                 }
-                #toggle:checked {
-                    display: block;
+            }
+            .show {
+                display: flex;
+                flex-direction: column;
+                @include flexchild();
+                box-sizing: border-box;
+                margin-top: -5px;
+                justify-content: center;
+                background-color: $color1;
+                z-index: 11;
+            }
+        }
+        .middle {
+            flex-flow: row wrap;
+        }
+        .middle2 {
+            .main-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .left {
+                    margin: 0 auto;
+                    padding: 0;
+                    width: 50vw;
                 }
             }
         }
+        .bottom {
+            top: 300px;
+        }
     }
-    
-    @include media(">tablet", "<950px") {}
