@@ -1,253 +1,272 @@
-/* COLORS */
-
-$color1: #2D3047;
-$color2: #b9cee9;
-$colorWhite: #fff;
-$colorText: #1e1e1e;
-$colorGray: #7A8899;
-$colorAccent: #ED6A5A;
-
-/* MIXINS */
-
-@mixin nav {
-    font: {
-        family: 'Arial', sans-serif;
-        size: 14px;
+    /* COLORS */
+    
+    $color1: #2D3047;
+    $color2: #b9cee9;
+    $colorWhite: #fff;
+    $colorText: #1e1e1e;
+    $colorGray: #7A8899;
+    $colorAccent: #ED6A5A;
+    /* MIXINS */
+    
+    @mixin nav {
+        font: {
+            family: 'Arial', sans-serif;
+            size: 14px;
+        }
+        text: {
+            transform: uppercase;
+            decoration: none;
+        }
+        color: $colorWhite;
     }
-    text: {
-        transform: uppercase;
-        decoration: none;
+    
+    @mixin headings {
+        font: {
+            family: 'Arial', sans-serif;
+            size: calc(18px + 1.5vw);
+        }
+        text: {
+            transform: uppercase;
+            align: center;
+        }
+        color: $colorWhite;
     }
-    color: $colorWhite;
-}
-
-@mixin headings {
-    font: {
-        family: 'Arial', sans-serif;
-        size: calc(18px + 1.5vw);
+    
+    @mixin text {
+        font: {
+            family: 'Arial', sans-serif;
+            size: calc(12px + .5vw);
+        }
+        color: $colorText;
+        line-height: normal;
+        text-align: justify;
+        text-justify: inter-word;
     }
-    text: {
-        transform: uppercase;
-        align: center;
-    }
-    color: $colorWhite;
-}
-
-@mixin text {
-    font: {
-        family: 'Arial', sans-serif;
-        size: calc(12px + .5vw);
-    }
-    color: $colorText;
-    line-height: normal;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-@mixin buttons {
-    background-color: #FFBC42;
-    color: $color1;
-    padding: 15px 20px;
-    border: none;
-    font-weight: bold;
-    margin-top: 40px;
-    &:hover {
-        background-color: #d45f4f;
-    }
-}
-
-@mixin flexparent {
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
-    align-items: center;
-    flex-flow: row wrap;
-    width: 100vw;
-}
-
-@mixin flexchild {
-    display: inline-block;
-    justify-content: center;
-    vertical-align: middle;
-    align-items: center;
-}
-
-body,
-html {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    overflow-x: hidden;
-}
-
-
-/*Responsive NAv */
-
-
-/* HEADER */
-
-header {
-    @include flexparent();
-    background-color: $color1;
-    height: 80px;
-    top: 0;
-    label {
-        margin: 0 0 0 0;
-        font-size: 25px;
-        line-height: 50px;
-        display: none;
-        margin: 0 20px;
-        text-align: right;
-        #toggle {
-            display: none;
+    
+    @mixin buttons {
+        background-color: #FFBC42;
+        color: $color1;
+        padding: 15px 20px;
+        border: none;
+        font-weight: bold;
+        margin-top: 40px;
+        &:hover {
+            background-color: #d45f4f;
         }
     }
-    nav {
-        display: block;
-        a {
-            @include nav();
-            padding: 0 15px;
-            &:hover {
-                color: $colorGray;
+    
+    @mixin flexparent {
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+        flex-flow: row wrap;
+        width: 100vw;
+    }
+    
+    @mixin flexchild {
+        display: inline-block;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+    }
+    
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        overflow-x: hidden;
+    }
+    /*Responsive NAv */
+    /* HEADER */
+    
+    header {
+        display: flex;
+        width: 100vw;
+        background-color: $color1;
+        height: 80px;
+        .nav1 {
+            @include flexchild();
+            margin: 0 auto;
+            .menu {
+                display: block;
+                a {
+                    @include nav();
+                    text-align: center;
+                    padding: 1rem 1rem;
+                }
+            }
+            label {
+                margin: 0 0 0 0;
+                font-size: 25px;
+                line-height: 50px;
+                display: none;
+                margin: 0 20px;
+                text-align: right;
+            }
+            #toggle {
+                display: none;
             }
         }
     }
-    #logo {
-        font-size: calc(25px + 1vw);
-        font-weight: bold;
-        align-self: center;
-    }
-}
-
-
-/*HEADINGS */
-
-h1 {
-    @include headings();
-}
-
-.top {
-    @include flexparent();
-    flex-flow: row nowrap;
-    background-color: $colorGray;
-    box-sizing: border-box;
-    width: 100vw;
-    .box {
-        text-align: center;
-        width: 50vw;
-        height: auto;
-        img {
-            width: 50vw;
-            float: left;
-        }
-        .ptop {
-            width: 40vw;
-            margin: 0 auto;
-            @include text();
-            color: $colorWhite;
-        }
-    }
-}
-
-button {
-    @include buttons();
-}
-
-.middle {
-    @include flexparent();
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    width: 100vw;
-    .box2 {
-        @include flexchild();
-        display: block;
-        flex-flow: column nowrap;
-        width: 25vw;
-        text-align: center;
-        padding: 5rem 4rem;
-    }
-    .box2 img h3 p {
-        margin: 0 auto;
-    }
-    img {
-        width: 50%;
-    }
-    h3 {
+    /*HEADINGS */
+    
+    h1 {
         @include headings();
-        color: $colorText;
     }
-    .box2 p {
-        @include text();
-    }
-}
-
-.middle2 {
-    position: relative;
-    height: 500px;
-    width: 100vw;
-}
-
-.main-container {
-    @include flexparent();
-    position: relative;
-    background-color: $color2;
-    padding: 2rem 0;
-    width: 100vw;
-    z-index: 10;
-    flex-flow: row nowrap;
-    .left {
-        @include flexchild();
-        @include text();
+    
+    .top {
+        @include flexparent();
+        flex-flow: row nowrap;
+        background-color: $colorGray;
+        box-sizing: border-box;
         width: 100vw;
-        margin: 0 auto;
-        padding: 0 80px;
-        text-align: center;
+        .box {
+            text-align: center;
+            width: 50vw;
+            height: auto;
+            img {
+                width: 50vw;
+                float: left;
+            }
+            .ptop {
+                width: 40vw;
+                margin: 0 auto;
+                @include text();
+                color: $colorWhite;
+            }
+        }
     }
-    .right {
-        @include flexchild();
-        width: 100%;
+    
+    button {
+        @include buttons();
+    }
+    
+    .middle {
+        @include flexparent();
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+        width: 100vw;
+        .box2 {
+            @include flexchild();
+            display: block;
+            flex-flow: column nowrap;
+            width: 25vw;
+            text-align: center;
+            padding: 5rem 4rem;
+        }
+        .box2 img h3 p {
+            margin: 0 auto;
+        }
         img {
             width: 50%;
         }
+        h3 {
+            @include headings();
+            color: $colorText;
+        }
+        .box2 p {
+            @include text();
+        }
     }
-}
-
-h2 {
-    @include headings();
-    color: $colorText;
-}
-
-.bottom {
-    width: 100vw;
-    box-sizing: border-box;
-    padding: 5rem 4rem;
-    .bottom-in {
-        @include text();
-        margin: 3rem auto;
-        width: 80vw;
+    
+    .middle2 {
+        position: relative;
+        height: 500px;
+        width: 100vw;
     }
-}
-
-footer {
-    background-color: $color1;
-    width: 100vw;
-    height: 100px;
-    @include flexparent();
-    .footer2 {
-        @include flexchild();
+    
+    .main-container {
+        @include flexparent();
+        position: relative;
+        background-color: $color2;
+        padding: 2rem 0;
+        width: 100vw;
+        z-index: 10;
+        flex-flow: row nowrap;
+        .left {
+            @include flexchild();
+            @include text();
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0 80px;
+            text-align: center;
+        }
+        .right {
+            @include flexchild();
+            width: 100%;
+            img {
+                width: 50%;
+            }
+        }
     }
-    h3 {
+    
+    h2 {
         @include headings();
-        font-size: 20px;
-        color: $colorGray;
+        color: $colorText;
     }
-    p {
-        @include text();
-        color: $colorGray;
-        font-size: 12px;
-        padding: 1rem 2rem;
-        text-align: center;
+    
+    .bottom {
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 5rem 4rem;
+        .bottom-in {
+            @include text();
+            margin: 3rem auto;
+            width: 80vw;
+        }
     }
-}
+    
+    footer {
+        background-color: $color1;
+        width: 100vw;
+        height: 100px;
+        @include flexparent();
+        .footer2 {
+            @include flexchild();
+        }
+        h3 {
+            @include headings();
+            font-size: 20px;
+            color: $colorGray;
+        }
+        p {
+            @include text();
+            color: $colorGray;
+            font-size: 12px;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+    }
+    /*----------------MEDIA QUERIES--------------*/
+    
+    $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default;
+    @media screen and (min-width: 340px) and (max-width:768) {
+        .nav1 {
+            margin-right: 0;
+            label {
+                display: block;
+                cursor: pointer;
+            }
+            .menu {
+                text-align: center;
+                width: 100%;
+                display: none;
+                box-sizing: border-box;
+                background-color: #000000;
+                a {
+                    display: block;
+                    border-bottom: 1px solid #D736A6;
+                    margin: 0;
+                }
+                #toggle:checked {
+                    display: block;
+                }
+            }
+        }
+    }
+    
+    @include media(">tablet", "<950px") {}

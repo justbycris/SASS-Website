@@ -17,6 +17,13 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100vw;
+  background-color: #2D3047;
+  height: 80px;
+}
+
+header .nav1 {
+  display: inline-block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -24,17 +31,24 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 100vw;
-  background-color: #2D3047;
-  height: 80px;
-  top: 0;
+  margin: 0 auto;
 }
 
-header label {
+header .nav1 .menu {
+  display: block;
+}
+
+header .nav1 .menu a {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 1rem;
+}
+
+header .nav1 label {
   margin: 0 0 0 0;
   font-size: 25px;
   line-height: 50px;
@@ -43,33 +57,8 @@ header label {
   text-align: right;
 }
 
-header label #toggle {
+header .nav1 #toggle {
   display: none;
-}
-
-header nav {
-  display: block;
-}
-
-header nav a {
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
-  padding: 0 15px;
-}
-
-header nav a:hover {
-  color: #7A8899;
-}
-
-header #logo {
-  font-size: calc(25px + 1vw);
-  font-weight: bold;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 
 /*HEADINGS */
